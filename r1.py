@@ -8,6 +8,7 @@ def read_file(filename):
 
 def convert(lines):
 	new = []
+	person = None
 	for line in lines:
 		if line == 'Allen':
 			person = 'Allen'
@@ -15,7 +16,8 @@ def convert(lines):
 		elif line == 'Tom':
 			person = 'Tom'
 			continue
-		new.append(person + ': ' + line)
+		if person:
+			new.append(person + ': ' + line)
 	return new
 
 def write_file(filename, lines):
